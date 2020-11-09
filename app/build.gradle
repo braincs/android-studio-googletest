@@ -20,6 +20,7 @@ android {
                 // Use location of Android Sdk from "local.properties".
                 // This is required to find path to "adb" tool.
                 arguments "-DANDROID_SDK_ROOT=" + get_android_sdk_root().toString()
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
             }
         }
     }
@@ -32,7 +33,6 @@ android {
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
-            version "3.10.2"
         }
     }
 }
